@@ -1,0 +1,71 @@
+<div>
+<p-fieldset legend="Orders" [toggleable]="true" [collapsed]="true">
+
+    <p-table #dt [columns]="Order" [value]="OrderObj" sortMode="multiple"  [paginatorPosition]="top"  [paginator]="true" [rows]="rowsSelect" [first]="orderPagination" sortMode="multiple">
+        <ng-template pTemplate="caption">
+            <div style="text-align: right">
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                    style="width:auto">
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+            <tr>
+                <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                    <input pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{order[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-paginator  [rows]="rowsSelect" [totalRecords]="showOrder" pageLinkSize="5" (onPageChange)="orderPaginate($event)"
+    [first]="orderPagination"></p-paginator>
+</p-fieldset>
+</div>
+<div class="mt-5">
+<p-fieldset legend="Order Details" [toggleable]="true" [collapsed]="true">
+    <p-table #orderdt [columns]="orderDetails" [paginatorPosition]="top" [paginator]="true" [rows]="rowsSelect" [first]="orderDetailsPagination" [value]="OrderDetailsObj" sortMode="multiple">
+        <ng-template pTemplate="caption">
+            <div style="text-align: right">
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="orderdt.filterGlobal($event.target.value, 'contains')"
+                    style="width:auto">
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+            <tr>
+                <th *ngFor="let col of columns" [ngSwitch]="col.field">
+                    <input pInputText type="text" (input)="orderdt.filter($event.target.value, col.field, col.filterMatchMode)">
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-orderDetails let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{orderDetails[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-paginator  [rows]="rowsSelect" [totalRecords]="showOrderDetails" pageLinkSize="5" (onPageChange)="orderDetailsPaginate($event)"
+    [first]="orderDetailsPagination"></p-paginator>
+</p-fieldset>
+</div>

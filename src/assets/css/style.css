@@ -1,0 +1,105 @@
+
+.ui-table{
+    font-size:13px!important;
+}
+
+.ui-table .ui-sortable-column.ui-state-highlight {
+    background-color: #a8a8a5;
+    color: black !important; 
+}
+.ui-widget input 
+{
+    width: -webkit-fill-available;
+}
+.ui-table .ui-table-tbody > tr.ui-state-highlight {
+    background-color: #b9b3b3;
+    color: #FFFFFF;
+}
+.ui-table .ui-table-tbody > tr:nth-child(even).ui-state-highlight {
+    background-color: #b9b3b3;
+    color: #FFFFFF;
+}
+.ui-table .ui-table-tbody > tr > td {
+    border: 1px solid white;
+    background: inherit;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 100%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+  }
+  html body {
+    height: 100%;
+    overflow: hidden;
+  }
+  html body .container-fluid.body-content {
+    position: absolute;
+    top: 50px;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+  header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: #ececed;
+      height: 50px;
+  }
+  footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ececed;
+      height: 30px;
+  }
+  .ui-tabmenu {
+    border-bottom: 3px solid grey;
+}
+.ui-fieldset .ui-fieldset-legend-text {
+    vertical-align: middle;
+    font-size: large !important;
+}
+.header{
+text-align: center !important;
+font-size: 30px;
+font-weight: 500;
+padding-top: 3px;
+}
+.footer{
+    text-align: center !important;
+    font-size: 10px;
+    font-weight: 500;
+    padding-top: 7px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
